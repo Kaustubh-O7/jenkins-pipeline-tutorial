@@ -13,9 +13,16 @@ pipeline {
         }
         stage ('testing phase'){
              parallel{
-                stage ('unit test'){
-                    steps{
-                        echo 'running unit test'
+                 stages{
+                    stage ('parallel one'){
+                        steps{
+                            echo 'running 1st parallel stage'
+                        }
+                    }
+                     stage ('parallel two'){
+                        steps{
+                            echo 'running 2nd parallel stage'
+                        }
                     }
                 }
              }
