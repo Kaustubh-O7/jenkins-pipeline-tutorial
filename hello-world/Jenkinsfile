@@ -1,19 +1,19 @@
 pipeline {
     agent any 
     stages {
-        stage('Static Analysis') {
+        stage('Hello') {
             steps {
-                echo 'Run the static analysis to the code' 
+                echo 'Hello Kaustubh' 
             }
         }
-        stage('Compile') {
+        stage('Python') {
             steps {
-                echo 'Compile the source code for secnd time' 
+                print("the sum of 2 and 3 is", 2+3) 
             }
         }
-        stage('Security Check') {
+        stage('Input') {
             steps {
-                echo 'Run the security check against the application' 
+                input("Continue..???")
             }
         }
         stage('Run Unit Tests') {
