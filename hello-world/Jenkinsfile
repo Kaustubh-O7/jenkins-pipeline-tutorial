@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Compile') {
             steps {
-                echo 'Compile the source code' 
+                echo 'Compile the source code for secnd time' 
             }
         }
         stage('Security Check') {
@@ -18,17 +18,12 @@ pipeline {
         }
         stage('Run Unit Tests') {
             steps {
-                echo 'Run unit tests from the source code' 
-            }
-        }
-        stage('Run Integration Tests') {
-            steps {
-                echo 'Run only crucial integration tests from the source code' 
+                echo 'Run unit tests again' 
             }
         }
         stage('Publish Artifacts') {
             steps {
-                echo 'Save the assemblies generated from the compilation' 
+                echo 'Removed previous stage of "run integration test" Save the assemblies generated from the compilation' 
             }
         }
     }
