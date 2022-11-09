@@ -6,24 +6,23 @@ pipeline {
                 echo 'Hello Kaustubh' 
             }
         }
-        stage('Python') {
-            steps {
-                print("the sum of 2 and 3 is", 2+3) 
+        stage ('code phase'){
+            steps{
+                input('Do you want to continue?')
             }
         }
-        stage('Input') {
-            steps {
-                input("Continue..???")
-            }
+        stage ('testing phase'){
+             parallel{
+                stage ('unit test'){
+                    steps{
+                        echo 'running unit test'
+                    }
+                }
+             }
         }
         stage('Run Unit Tests') {
             steps {
                 echo 'Run unit tests again' 
-            }
-        }
-        stage('Publish Artifacts') {
-            steps {
-                echo 'Removed previous stage of "run integration test" Save the assemblies generated from the compilation' 
             }
         }
     }
