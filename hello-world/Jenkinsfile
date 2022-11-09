@@ -13,11 +13,10 @@ pipeline {
         }
         stage ('testing phase'){
              parallel{
-                 agent any
-                 stages{
                     stage ('parallel one'){
                         steps{
                             echo 'running 1st parallel stage'
+                            input('Do you want to continue on second stage?')
                         }
                     }
                      stage ('parallel two'){
@@ -25,7 +24,6 @@ pipeline {
                             echo 'running 2nd parallel stage'
                         }
                     }
-                }
              }
         }
         stage('Run Unit Tests') {
