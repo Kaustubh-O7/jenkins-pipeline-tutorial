@@ -13,6 +13,7 @@ pipeline {
         }
         stage ('testing phase'){
              parallel{
+                 agent any
                  stages{
                     stage ('parallel one'){
                         steps{
